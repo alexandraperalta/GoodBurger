@@ -4,28 +4,28 @@
 
 <table>
   {{#each burgers}}
-    {{#if devoured}}
+    {{#unless devoured}}
         <tr>
             <td>{{id}}</td>
             <td>{{burger_name}}</td>
             <td>{{devoured}}</td>
             <td><button class="btn btn-primary devour" data-state="0" data-id="{{id}}">Devour!</button></td>            
         </tr>
-    {{/if}}
+    {{/unless}}
   {{/each}}
 </table>
 
 <h2>Burgers that are devoured!</h2>
 <table>
   {{#each burgers}}
-    {{#unless devoured}}
+    {{#if devoured}}
         <tr>
             <td>{{id}}</td>
             <td>{{burger_name}}</td>
             <td>{{devoured}}</td>
             <td><button class="btn btn-primary devour" data-state="1" data-id="{{id}}">Reset</button></td>            
         </tr>
-        {{/unless}}
+        {{/if}}
   {{/each}}
 </table>
 
